@@ -1,6 +1,8 @@
 let array = ["Banana ", "Apple ", "Cat ", "Tree ", "Acorn ", "Scratch ", "Use ", "Write ", "In ",
 "Vue ", "Svelte ", "C ", "Program ", "Write ", "Microsoft ", "Windows ", "Mac ", "God286 ", "JaydenDev ",
-"Git ", "GitHub ", "Meow! "
+"Git ", "GitHub ", "Meow! ", "Who ", "What ", "Where ", "When ", "Why ", "Then ", "Bit ", "Bite ",
+"Byte ", "Kite ", "Bottom ", "Top ", "Padding ", "HTML ", "CSS ", "SCSS ", "Sometimes ", "Someday ",
+"Art ", "Math ", "Dog ", "Visual ", "Studio ", "Code "
 ]
 
 function randMSG() {
