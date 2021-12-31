@@ -1,6 +1,6 @@
 let array = ["Banana ", "Apple ", "Cat ", "Tree ", "Acorn ", "Scratch ", "Use ", "Write ", "In ",
 "Vue ", "Svelte ", "C ", "Program ", "Write ", "Microsoft ", "Windows ", "Mac ", "God286 ", "JaydenDev ",
-"Git", "GitHub", "Meow!"
+"Git ", "GitHub ", "Meow! "
 ]
 
 function randMSG() {
