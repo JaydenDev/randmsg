@@ -2,7 +2,7 @@
 <HTML>
 
 <HEAD>
-    <title> RandMSG </title>
+    <title> Markov Random Words </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/js-markov/dist/markov.js"></script>
     <script src="data.js"></script>
@@ -12,7 +12,7 @@
     <div class="grid py-3 px-3 bg-blue-500">
         <ul>
             <li>
-                <h1 class="text-white"> RandMSG</h1>
+                <h1 class="text-white"> Markov Example </h1>
             </li>
             <!-- Not sure why it doesn't position properly
                 <li>
@@ -22,33 +22,32 @@
     </div>
     <script>
         const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-            async function generate() {
-                await sleep(2000)
-                markov = new Markov();
+        async function generate() {
+            markov = new Markov();
 
-                markov.addStates(array);
-                markov.train()
-                let sentence = '';
-                // for (let i in Array(Number(prompt("How many sentences?")))) {
-                sentence += markov.generateRandom() + " "
-                // }
-                document.getElementById("span").innerText = sentence;
-                dofunc();
+            markov.addStates(array);
+            markov.train()
+            let sentence = '';
+            // for (let i in Array(Number(prompt("How many sentences?")))) {
+            await sleep(1000)
+            sentence += markov.generateRandom() + " "
+            // }
+            document.getElementById("span").innerText = sentence;
+            dofunc();
+        }
+
+        function dofunc() {
+            for (let step = 0; step < 999; step++) {
+                generate();
             }
-
-            function dofunc() {
-                for (let step = 0; step < 999; step++) {
-                    generate();
-                }
-            }
-
+        }
+        generate();
     </script>
     &nbsp;
     <div class="w-50 text-black">
-        <h1> RandMSG </h1>
+        <h1> This is an example of Markov text randomization </h1>
         <p> Random Message Generator </p>
-        <button onClick="generate()">Click Me!</button>
-        <span id="span"></span>
+        <span class="text-black content-center text-3xl text-center" id="span"></span>
     </div>
 </Body>
 
