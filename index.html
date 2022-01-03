@@ -29,8 +29,8 @@
                 'The weather is sunny',
                 'The weather for tomorrow might be rainy'
             ]);
-
-            sentence = markov.generate()
+            markov.train()
+            sentence = markov.generateRandom()
             document.getElementById("span").innerText = sentence;
         }
     </script>
