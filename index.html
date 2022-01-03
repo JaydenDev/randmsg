@@ -30,7 +30,10 @@
                 'The weather for tomorrow might be rainy'
             ]);
             markov.train()
-            sentence = markov.generateRandom()
+            let sentence = '';
+            for(let i in Array(Number(prompt("How many sentences?")))) {
+              sentence += markov.generateRandom() + " "
+            }
             document.getElementById("span").innerText = sentence;
         }
     </script>
