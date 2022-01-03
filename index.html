@@ -5,6 +5,7 @@
     <title> RandMSG </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/js-markov/dist/markov.js"></script>
+    <script src="data.js"></script>
 </HEAD>
 
 <Body>
@@ -23,19 +24,22 @@
         function generate() {
             markov = new Markov();
 
-            markov.addStates([
-                'Today is sunny',
-                'Today is rainy',
-                'The weather is sunny',
-                'The weather for tomorrow might be rainy'
-            ]);
+            markov.addStates(array);
             markov.train()
             let sentence = '';
             for(let i in Array(Number(prompt("How many sentences?")))) {
               sentence += markov.generateRandom() + " "
             }
             document.getElementById("span").innerText = sentence;
+            dofunc();
         }
+
+        function dofunc () {
+            for (let step = 0; step < 999; step++) {
+                generate();
+            }
+        }
+
     </script>
     &nbsp;
     <div class="w-50 text-black">
