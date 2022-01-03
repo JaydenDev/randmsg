@@ -12,7 +12,20 @@ let array = ["Banana ", "Apple ", "Cat ", "Tree ", "Acorn ", "Batch ", "Use ", "
 "Rust ", "Rusty ", "Rusted ", "Water ", "Hydrogen ", "Nanoparticle ", "Chemical ", "Reaction"
 ]
 
-function randMSG() {
+function randMSGx9() {
+    const word1 = array[Math.floor(Math.random() * array.length)];
+    const word2 = array[Math.floor(Math.random() * array.length)];
+    const word3 = array[Math.floor(Math.random() * array.length)];
+    const word4 = array[Math.floor(Math.random() * array.length)];
+    const word5 = array[Math.floor(Math.random() * array.length)];
+    const word6 = array[Math.floor(Math.random() * array.length)];
+    const word7 = array[Math.floor(Math.random() * array.length)];
+    const word8 = array[Math.floor(Math.random() * array.length)];
+    const word9 = array[Math.floor(Math.random() * array.length)];
+    document.getElementById("span").innerHTML = (word1 + word2 + word3 + word4 + word5 + word6 + word7 + word8 + word9);
+}
+
+function randMSGx6() {
     const word1 = array[Math.floor(Math.random() * array.length)];
     const word2 = array[Math.floor(Math.random() * array.length)];
     const word3 = array[Math.floor(Math.random() * array.length)];
@@ -20,4 +33,12 @@ function randMSG() {
     const word5 = array[Math.floor(Math.random() * array.length)];
     const word6 = array[Math.floor(Math.random() * array.length)];
     document.getElementById("span").innerHTML = (word1 + word2 + word3 + word4 + word5 + word6);
+}
+
+function randMSGx3() {
+    const word1 = array[Math.floor(Math.random() * array.length)];
+    const word2 = array[Math.floor(Math.random() * array.length)];
+    const word3 = array[Math.floor(Math.random() * array.length)];
+
+    document.getElementById("span").innerHTML = (word1 + word2 + word3);
 }
