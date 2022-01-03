@@ -1,31 +1,46 @@
 <!DOCTYPE HTML>
 <HTML>
-    <HEAD>
-        <title> RandMSG </title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script src="index.js"></script>
-    </HEAD>
-    <Body>
-        <div class="grid py-3 px-3 bg-blue-500">
-            <ul>
-                <li>
-                    <h1 class="text-white"> RandMSG</h1>
-                </li>
-                <!-- Not sure why it doesn't position properly
+
+<HEAD>
+    <title> RandMSG </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/js-markov/dist/markov.js"></script>
+</HEAD>
+
+<Body>
+    <div class="grid py-3 px-3 bg-blue-500">
+        <ul>
+            <li>
+                <h1 class="text-white"> RandMSG</h1>
+            </li>
+            <!-- Not sure why it doesn't position properly
                 <li>
                     <a class="text-white" href="https://github.com/JaydenDev/randmsg">GitHub</a>
                 </li> -->
-            </ul>
-        </div>
-        &nbsp;
-        <div class="w-50 text-black">
-            <h1> RandMSG </h1>
-            <p> Random Message Generator </p>
-            <button class="px-3 py-3 bg-blue-500 rounded" onClick="randMSGx9()">9 Words</button>
-            <button class="px-3 py-3 bg-blue-500 rounded" onClick="randMSGx6()">6 Words</button>
-            <button class="px-3 py-3 bg-blue-500 rounded" onClick="randMSGx3()">3 Words</button>
-            <br>
-            <span id="span"></span>
-        </div>
-    </Body>
+        </ul>
+    </div>
+    <script>
+        function generate() {
+            markov = new Markov();
+
+            markov.addStates([
+                'Today is sunny',
+                'Today is rainy',
+                'The weather is sunny',
+                'The weather for tomorrow might be rainy'
+            ]);
+
+            sentence = markov.generate()
+            document.getElementById("span").innerText = sentence;
+        }
+    </script>
+    &nbsp;
+    <div class="w-50 text-black">
+        <h1> RandMSG </h1>
+        <p> Random Message Generator </p>
+        <button onClick="generate()">Click Me!</button>
+        <span id="span"></span>
+    </div>
+</Body>
+
 </HTML>
