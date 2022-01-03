@@ -21,24 +21,26 @@
         </ul>
     </div>
     <script>
-        function generate() {
-            markov = new Markov();
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+            async function generate() {
+                await sleep(2000)
+                markov = new Markov();
 
-            markov.addStates(array);
-            markov.train()
-            let sentence = '';
-            for(let i in Array(Number(prompt("How many sentences?")))) {
-              sentence += markov.generateRandom() + " "
+                markov.addStates(array);
+                markov.train()
+                let sentence = '';
+                // for (let i in Array(Number(prompt("How many sentences?")))) {
+                sentence += markov.generateRandom() + " "
+                // }
+                document.getElementById("span").innerText = sentence;
+                dofunc();
             }
-            document.getElementById("span").innerText = sentence;
-            dofunc();
-        }
 
-        function dofunc () {
-            for (let step = 0; step < 999; step++) {
-                generate();
+            function dofunc() {
+                for (let step = 0; step < 999; step++) {
+                    generate();
+                }
             }
-        }
 
     </script>
     &nbsp;
